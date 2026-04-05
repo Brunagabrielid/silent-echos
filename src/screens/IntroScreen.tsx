@@ -1,16 +1,38 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 export default function IntroScreen() {
   const navigate = useNavigate();
+  const [displayedText, setDisplayedText] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
+  const text = "Existem memórias que deveriam permanecer apagadas...";
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      navigate('/menu');
-    }, 4500); // 4.5s intro
-    return () => clearTimeout(timer);
-  }, [navigate]);
+    const startTimer = setTimeout(() => {
+      setIsTyping(true);
+    }, 2000); // Aguarda a animação do título principal
+    
+    return () => clearTimeout(startTimer);
+  }, []);
+
+  useEffect(() => {
+    if (!isTyping) return;
+    
+    let i = 0;
+    const interval = setInterval(() => {
+      i++;
+      setDisplayedText(text.slice(0, i));
+      if (i >= text.length) {
+        clearInterval(interval);
+        setTimeout(() => {
+          navigate('/menu');
+        }, 2000);
+      }
+    }, 60); 
+    
+    return () => clearInterval(interval);
+  }, [isTyping, navigate]);
 
   return (
     <motion.div 
@@ -30,11 +52,13 @@ export default function IntroScreen() {
       </motion.h1>
       <motion.p
         className="text-accent mt-4 font-readable tracking-wider"
+        style={{ minHeight: '1.5rem' }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
+        transition={{ delay: 2, duration: 0.1 }}
       >
-        Existem memórias que deveriam permanecer apagadas...
+        {displayedText}
+        {isTyping && displayedText.length < text.length && <span className="animate-pulse ml-1 text-primary">|</span>}
       </motion.p>
     </motion.div>
   );
