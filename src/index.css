@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Default B&W Mystery Theme */
+  --color-bg: #000000;
+  --color-fg: #f5f5f5;
+  --color-primary: #ffffff;
+  --color-accent: #666666;
+  
+  --font-base-size: 16px;
+  --font-family-game: "Courier New", monospace;
+  --text-speed: 50ms;
+}
+
+/* High Contrast Mode Variables */
+.high-contrast {
+  --color-bg: #000000;
+  --color-fg: #ffffff;
+  --color-primary: #ffffff;
+  --color-accent: #ffffff;
+  --font-family-game: "Inter", sans-serif; /* For better readability */
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-size: var(--font-base-size);
+  font-family: var(--font-family-game);
+  margin: 0;
+  overflow: hidden; /* visual novel mostly full screen */
+}
+
+/* Custom styles for glitch effect from React Patterns/Best practices */
+.glitch {
+  animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch {
+  2%, 64% { transform: translate(2px, 0) skew(0deg); }
+  4%, 60% { transform: translate(-2px, 0) skew(0deg); }
+  62% { transform: translate(0, 0) skew(5deg); }
+}
