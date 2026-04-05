@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { playTypewriterSound } from '../../utils/audio';
 import { useSettingsStore } from '../../store/useSettingsStore';
 import type { Choice } from '../../store/useGameStore';
 
@@ -29,6 +30,9 @@ export default function DialogBox({ character, text, choices, onComplete, onChoi
     const interval = setInterval(() => {
       i++;
       setDisplayedText(text.slice(0, i));
+      if (text.charAt(i - 1) !== ' ' && text.charAt(i - 1) !== '\n') {
+        playTypewriterSound();
+      }
       if (i >= text.length) {
         clearInterval(interval);
         setIsTyping(false);

@@ -4,9 +4,11 @@ import { Lock } from 'lucide-react';
 import { useGameStore } from '../store/useGameStore';
 import { chapter1 } from '../data/chapter1';
 import { chapter2 } from '../data/chapter2';
+import { useTranslation } from 'react-i18next';
 
 export default function ChapterSelect() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const { unlockedChapters, startChapter } = useGameStore();
 
   const chapters = [chapter1, chapter2];
@@ -25,10 +27,12 @@ export default function ChapterSelect() {
       transition={{ duration: 0.5 }}
     >
       <button onClick={() => navigate('/menu')} className="text-accent hover:text-white mb-8 self-start font-readable uppercase tracking-wider text-sm transition-colors">
-        ← Voltar
+        {t('gameplay.menu')}
       </button>
 
-      <h1 className="text-4xl font-mystery font-bold mb-12 border-b border-accent pb-4 inline-block self-start">ARQUIVOS CONFIDENCIAIS</h1>
+      <h1 className="text-4xl font-mystery font-bold mb-12 border-b border-accent pb-4 inline-block self-start">
+        {t('menu.chapter_select')}
+      </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {chapters.map((chap, idx) => {
@@ -51,9 +55,9 @@ export default function ChapterSelect() {
                 )}
               </div>
               <div className="p-4 bg-black">
-                <h3 className="text-xl font-bold font-mystery mb-2">{chap.title}</h3>
+                <h3 className="text-xl font-bold font-mystery mb-2">{t(chap.title)}</h3>
                 {isUnlocked ? (
-                  <p className="text-sm font-readable text-accent">{chap.description}</p>
+                  <p className="text-sm font-readable text-accent">{t(chap.description)}</p>
                 ) : (
                   <p className="text-sm font-readable text-accent italic">Dados corrompidos ou insuficientes.</p>
                 )}

@@ -2,10 +2,12 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useGameStore } from '../store/useGameStore';
 import { chapter1 } from '../data/chapter1';
+import { useTranslation } from 'react-i18next';
 
 export default function MainMenu() {
   const navigate = useNavigate();
   const { startChapter } = useGameStore();
+  const { t } = useTranslation();
 
   return (
     <motion.div 
@@ -47,10 +49,10 @@ export default function MainMenu() {
           }} 
           delay={0.4}
         >
-          Novo Jogo
+          {t('menu.new_game')}
         </MenuButton>
         <MenuButton onClick={() => navigate('/chapters')} delay={0.5}>
-          Selecionar Capítulo
+          {t('menu.chapter_select')}
         </MenuButton>
       </div>
     </motion.div>

@@ -6,6 +6,7 @@ import { chapter2 } from '../data/chapter2';
 import SceneViewer from '../components/novel/SceneViewer';
 import DialogBox from '../components/novel/DialogBox';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const chaptersRecord = {
   chapter1,
@@ -14,6 +15,7 @@ const chaptersRecord = {
 
 export default function Gameplay() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const { currentChapterId, currentSceneId, goToScene, exitToMenu, unlockChapter } = useGameStore();
 
   useEffect(() => {
@@ -30,8 +32,8 @@ export default function Gameplay() {
   if (!currentScene) {
     return (
       <div className="w-full h-full flex items-center justify-center bg-black gap-4">
-        <h1 className="text-primary text-xl">Erro: Cena não encontrada.</h1>
-        <button onClick={() => { exitToMenu(); navigate('/menu'); }} className="underline text-accent">Sair</button>
+        <h1 className="text-primary text-xl">{t('gameplay.error_scene_not_found')}</h1>
+        <button onClick={() => { exitToMenu(); navigate('/menu'); }} className="underline text-accent">{t('gameplay.exit')}</button>
       </div>
     );
   }
@@ -73,7 +75,7 @@ export default function Gameplay() {
           }}
           className="text-accent hover:text-white font-readable uppercase tracking-wider text-sm transition-colors bg-black/50 px-3 py-1 rounded"
         >
-          &lt; Menu
+          {t('gameplay.menu')}
         </button>
       </div>
 
@@ -83,9 +85,9 @@ export default function Gameplay() {
       />
 
       <DialogBox 
-        character={currentScene.character}
-        text={currentScene.text}
-        choices={currentScene.choices}
+        character={currentScene.character ? t(currentScene.character) : undefined}
+        text={t(currentScene.text)}
+        choices={currentScene.choices ? currentScene.choices.map(c => ({...c, text: t(c.text)})) : undefined}
         onComplete={handleNext}
         onChoiceSelect={handleChoiceSelect}
       />

@@ -5,49 +5,49 @@ import woman from '../../assets-mock/woman-8725575_1280.jpg';
 
 export const chapter2: Chapter = {
   id: 'chapter2',
-  title: 'O Arquivo Secreto',
-  description: 'Adentrando as memórias sombrias...',
+  title: 'chapters.chapter2.title',
+  description: 'chapters.chapter2.description',
   thumbnail: home,
   initialSceneId: 'scene_1',
   scenes: {
     scene_1: {
       id: 'scene_1',
       backgrounds: [home],
-      text: 'Você chegou. A sala está escura e incrivelmente silenciosa.',
+      text: 'chapters.chapter2.scene_1.text',
       nextSceneId: 'scene_2'
     },
     scene_2: {
       id: 'scene_2',
       backgrounds: [home, raccoon, woman], // Dynamic scene!
       delayBetweenFrames: 300,
-      text: 'Vários flashes começam a aparecer em sua mente. Vultos estranhos...!',
+      text: 'chapters.chapter2.scene_2.text',
       choices: [
-        { text: 'Tentar focar na visão', nextSceneId: 'scene_3a' },
-        { text: 'Fechar os olhos firmemente', nextSceneId: 'scene_3b' }
+        { text: 'chapters.chapter2.scene_2.choice_1', nextSceneId: 'scene_3a' },
+        { text: 'chapters.chapter2.scene_2.choice_2', nextSceneId: 'scene_3b' }
       ]
     },
     scene_3a: {
       id: 'scene_3a',
       backgrounds: [woman],
-      character: 'Voz',
-      text: 'Você conseguiu me ver. A verdade estava sempre na sua frente.',
+      character: 'characters.voice',
+      text: 'chapters.chapter2.scene_3a.text',
       nextSceneId: 'end_chap2_good'
     },
     scene_3b: {
       id: 'scene_3b',
       backgrounds: [raccoon],
-      text: 'A escuridão consome tudo. Você perdeu a sua última chance.',
+      text: 'chapters.chapter2.scene_3b.text',
       nextSceneId: 'end_chap2_bad'
     },
     end_chap2_good: {
       id: 'end_chap2_good',
       backgrounds: [woman],
-      text: '[ FIM DO CAPÍTULO 2 - Final Verdadeiro ]',
+      text: 'chapters.chapter2.end_good.text',
     },
     end_chap2_bad: {
       id: 'end_chap2_bad',
       backgrounds: [home],
-      text: '[ FIM DO CAPÍTULO 2 - Final Ruim ]',
+      text: 'chapters.chapter2.end_bad.text',
     }
   }
 };

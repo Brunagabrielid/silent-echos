@@ -1,0 +1,74 @@
+{
+  "intro": {
+    "subtitle": "There are memories that should remain erased..."
+  },
+  "menu": {
+    "new_game": "New Game",
+    "chapter_select": "Chapter Select",
+    "settings": "Settings",
+    "font_size": "Font Size",
+    "text_speed": "Text Speed (Faster ➔)",
+    "high_contrast": "High Contrast",
+    "language": "Language",
+    "sound_volume": "Sound Volume",
+    "on": "ON",
+    "off": "OFF"
+  },
+  "characters": {
+    "unknown": "Unknown",
+    "voice": "Voice"
+  },
+  "chapters": {
+    "chapter1": {
+      "title": "The Dark Beginning",
+      "description": "Your first day seems normal, until you discover the secret.",
+      "scene_1": {
+        "text": "Where am I? Everything seems to be spinning..."
+      },
+      "scene_2": {
+        "text": "You shouldn't be here. Run while you can.",
+        "choice_1": "Who are you?",
+        "choice_2": "(Run)"
+      },
+      "scene_3a": {
+        "text": "Just a memory. Find the safe in the secret room.",
+        "choice_1": "What does this mean?"
+      },
+      "scene_3b": {
+        "text": "You try to run, but your legs feel heavy. The ground gives way..."
+      },
+      "end": {
+        "text": "[ END OF CHAPTER 1 - Return to main menu ]"
+      }
+    },
+    "chapter2": {
+      "title": "The Secret Archive",
+      "description": "Entering dark memories...",
+      "scene_1": {
+        "text": "You arrived. The room is dark and incredibly silent."
+      },
+      "scene_2": {
+        "text": "Several flashes begin to appear in your mind. Strange figures...!",
+        "choice_1": "Try to focus on the vision",
+        "choice_2": "Close your eyes tightly"
+      },
+      "scene_3a": {
+        "text": "You managed to see me. The truth was always in front of you."
+      },
+      "scene_3b": {
+        "text": "Darkness consumes everything. You lost your last chance."
+      },
+      "end_good": {
+        "text": "[ END OF CHAPTER 2 - True Ending ]"
+      },
+      "end_bad": {
+        "text": "[ END OF CHAPTER 2 - Bad Ending ]"
+      }
+    }
+  },
+  "gameplay": {
+    "error_scene_not_found": "Error: Scene not found.",
+    "exit": "Exit",
+    "menu": "< Menu"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "intro": {
+    "subtitle": "Existem memórias que deveriam permanecer apagadas..."
+  },
+  "menu": {
+    "new_game": "Novo Jogo",
+    "chapter_select": "Selecionar Capítulo",
+    "settings": "Configurações",
+    "font_size": "Tamanho da Fonte",
+    "text_speed": "Velocidade do Texto (Mais Rápido ➔)",
+    "high_contrast": "Alto Contraste / Legibilidade",
+    "language": "Idioma",
+    "sound_volume": "Volume do Som",
+    "on": "ATIVADO",
+    "off": "DESATIVADO"
+  },
+  "characters": {
+    "unknown": "Desconhecida",
+    "voice": "Voz"
+  },
+  "chapters": {
+    "chapter1": {
+      "title": "O Início Sombrio",
+      "description": "Seu primeiro dia parece normal, até você descobrir o segredo.",
+      "scene_1": {
+        "text": "Onde estou? Tudo parece estar girando..."
+      },
+      "scene_2": {
+        "text": "Você não deveria estar aqui. Fuja enquanto pode.",
+        "choice_1": "Quem é você?",
+        "choice_2": "(Correr)"
+      },
+      "scene_3a": {
+        "text": "Apenas uma lembrança. Encontre o cofre na sala secreta.",
+        "choice_1": "O que isso significa?"
+      },
+      "scene_3b": {
+        "text": "Você tenta correr, mas suas pernas parecem pesadas. O chão cede..."
+      },
+      "end": {
+        "text": "[ FIM DO CAPÍTULO 1 - Volte ao menu principal ]"
+      }
+    },
+    "chapter2": {
+      "title": "O Arquivo Secreto",
+      "description": "Adentrando as memórias sombrias...",
+      "scene_1": {
+        "text": "Você chegou. A sala está escura e incrivelmente silenciosa."
+      },
+      "scene_2": {
+        "text": "Vários flashes começam a aparecer em sua mente. Vultos estranhos...!",
+        "choice_1": "Tentar focar na visão",
+        "choice_2": "Fechar os olhos firmemente"
+      },
+      "scene_3a": {
+        "text": "Você conseguiu me ver. A verdade estava sempre na sua frente."
+      },
+      "scene_3b": {
+        "text": "A escuridão consome tudo. Você perdeu a sua última chance."
+      },
+      "end_good": {
+        "text": "[ FIM DO CAPÍTULO 2 - Final Verdadeiro ]"
+      },
+      "end_bad": {
+        "text": "[ FIM DO CAPÍTULO 2 - Final Ruim ]"
+      }
+    }
+  },
+  "gameplay": {
+    "error_scene_not_found": "Erro: Cena não encontrada.",
+    "exit": "Sair",
+    "menu": "< Menu"
+  }
+}

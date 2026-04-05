@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { playTypewriterSound } from '../utils/audio';
 
 export default function IntroScreen() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [displayedText, setDisplayedText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
-  const text = "Existem memórias que deveriam permanecer apagadas...";
+  const text = t('intro.subtitle');
 
   useEffect(() => {
     const startTimer = setTimeout(() => {
@@ -23,6 +26,9 @@ export default function IntroScreen() {
     const interval = setInterval(() => {
       i++;
       setDisplayedText(text.slice(0, i));
+      if (text.charAt(i - 1) !== ' ') {
+        playTypewriterSound();
+      }
       if (i >= text.length) {
         clearInterval(interval);
         setTimeout(() => {
