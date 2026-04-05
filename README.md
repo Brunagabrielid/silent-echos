@@ -1,5 +1,9 @@
 # Silent Echoes (Visual Novel Engine)
 
+Jogue agora: [https://brunagabrielid.github.io/silent-echos/#/play](https://brunagabrielid.github.io/silent-echos/#/play)
+
+---
+
 Uma engine customizada de Visual Novel focada em mistério e suspense, entregando alta acessibilidade e suporte global a multi-idiomas. Desenvolvida baseada nas tecnologias de ponta do React e Vite.
 
 ## Solucionando Erros no GitHub Pages (Erro 404)
