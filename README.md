@@ -1,73 +1,23 @@
-# React + TypeScript + Vite
+# Silent Echoes (Visual Novel Engine)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma engine customizada de Visual Novel focada em mistério e suspense, entregando alta acessibilidade e suporte global a multi-idiomas. Desenvolvida baseada nas tecnologias de ponta do React e Vite.
 
-Currently, two official plugins are available:
+## Solucionando Erros no GitHub Pages (Erro 404)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Se ao acessar o seu jogo em `https://brunagabrielid.github.io/silent-echos/` a tela ficar branca e o console do navegador mostrar erros como `GET /src/main.tsx 404 (Not Found)` ou `404 para favicon`, **não se preocupe, o código não está com problemas!**
 
-## React Compiler
+Esse erro ocorre porque o **GitHub está servindo os arquivos brutos do código-fonte (para desenvolvimento)** em vez de servir os arquivos transformados e agrupados ("build") gerados automaticamente pela pipeline do GitHub Actions que nós configuramos no projeto.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Siga este passo a passo para consertar:
+1. Acesse o seu repositório no Github pelo próprio navegador.
+2. Clique na aba com ícone de engrenagem **"Settings"** (Configurações).
+3. No menu lateral esquerdo, desça um pouco e clique em **"Pages"**.
+4. Na seção **Build and deployment** (Build e implantação), olhe o item **"Source"** (Fonte).
+5. **Mude o campo "Source" que deve estar apontando para *Deploy from a branch*** alterando-o para **"GitHub Actions"**.
+6. Pronto! Se o repositório acabou de receber as alterações do código local via `git push`, clique na aba "Actions" do GitHub para checar o progresso da "rodinha girando". O jogo entrará no ar assim que o "Deploy to GitHub Pages" ficar verde.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Saiba mais
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Consulte os arquivos na pasta [docs/](docs/overview.md) para visões detalhadas sobre a Arquitetura Orientada à Tradução e sobre a Stack de Tecnologias empregada (Zustand, React Router, Framer Motion e Radix UI).
